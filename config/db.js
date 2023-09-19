@@ -6,9 +6,9 @@ const connectDB = async () => {
   try {
     pool = mysql
       .createPool({
-        host: "localhost",
+        host: "db",
         user: "root",
-        password: "MyNewPass1!",
+        password: "76315631",
         database: "joining_hands",
         port: 3306,
       })
