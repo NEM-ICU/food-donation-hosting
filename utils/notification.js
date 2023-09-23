@@ -126,9 +126,9 @@ const diliveryAcceptedStageNotification = async (userId, food_id) => {
   Your order has accepted for delivery, Thank You!
   
   Food id : ${food_id},
-  Rider Name : ${rider.name}, 
-  Rider Address : ${rider.address} 
-  Rider Mobile : ${rider.mobile}
+  Rider Name : ${rider[0].name}, 
+  Rider Address : ${rider[0].address} 
+  Rider Mobile : ${rider[0].mobile}
 
   `
   );
