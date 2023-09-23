@@ -28,7 +28,7 @@ services:
   app:
     image: api
     ports:
-      - "8000:80"
+      - "80:8000"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
