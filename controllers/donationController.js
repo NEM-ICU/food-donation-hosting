@@ -37,11 +37,12 @@ const getDeliveredItems = async (req, res) => {
 };
 
 const donationsFilter = async (req, res) => {
-  const {} = req.query;
+  const {stage} = req.query;
+  console.log(req.query);
   try {
     const donated_foods = await pool.query(
       "SELECT * FROM donations WHERE `stage` = ? ",
-      [stage]
+      [stage.toString()]
     );
     res.status(200).send({
       foods: donated_foods[0],
