@@ -62,6 +62,16 @@ app.get("/donor-donation-history", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+
+app.get("/register", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+
 app.use(morgan("dev"));
 app.use(express.json());
 

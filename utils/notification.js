@@ -68,8 +68,6 @@ const acceptedStageNotification = async (userId, food_id) => {
   const admin = await getAdminEmail();
   const foodData = await getFoodData(food_id);
   const donor = await getUserData(foodData[0].donor_id);
-  console.log(foodData);
-  console.log(donor);
 
   await sendMail(
     admin[0].email,
@@ -112,9 +110,9 @@ const diliveryAcceptedStageNotification = async (userId, food_id) => {
     Dilivery accepted by Rider.
   
     Food id : ${food_id},
-    Rider Name : ${rider.name}, 
-    Rider Address : ${rider.address} 
-    Rider Mobile : ${rider.m_no}
+    Rider Name : ${rider[0].name}, 
+    Rider Address : ${rider[0].address} 
+    Rider Mobile : ${rider[0].m_no}
 
   `
   );
@@ -151,21 +149,22 @@ const completedStageNotification = async (userId, food_id) => {
     Rider Name : ${rider[0].name}, 
     Rider Address : ${rider[0].address} 
     Helpseeker Name : ${seeker[0].name}
+    Helpeeker Address : ${seeker[0].address}
 
   `
   );
 
   await sendMail(
     donor[0].email,
-    "Dilivery Accepted",
+    "Donation Delivered Successfully",
     `
-  Your Donation has Delivered Successfully, Thank You!
+    Your Donation has Delivered Successfully, Thank You!
 
-  Food id : ${food_id},
-  Rider Name : ${rider[0].name}, 
-  Rider Address : ${rider[0].address} 
-  Helpseeker Name : ${seeker[0].name}
-
+    Food id : ${food_id},
+    Rider Name : ${rider[0].name}, 
+    Rider Address : ${rider[0].address} 
+    Helpseeker Name : ${seeker[0].name}
+    Helpeeker Address : ${seeker[0].address}
   `
   );
 };
